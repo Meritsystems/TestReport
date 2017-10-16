@@ -6,7 +6,7 @@
         "roles": [
             {
                 "modified_by": "Administrator",
-                "parent": "Item2",
+                "parent": "Items To Be Requested From Stock Requistion",
                 "doctype": "Has Role",
                 "idx": 1,
                 "parenttype": "Report",
@@ -17,7 +17,7 @@
             },
             {
                 "modified_by": "Administrator",
-                "parent": "Item2",
+                "parent": "Items To Be Requested From Stock Requistion",
                 "doctype": "Has Role",
                 "idx": 2,
                 "parenttype": "Report",
@@ -35,9 +35,8 @@
         "is_standard": "Yes",
         "add_total_row": 1,
         "apply_user_permissions": 1,
-        "name": "Item2",
+        "name": "Items To Be Requested From Stock Requistion",
         "idx": 0,
-        "modified": "2017-10-15 20:50:59.903897",
-        "report_name": "Item2"
+        "report_name": "Items To Be Requested From Stock Requistion"
    
 }
