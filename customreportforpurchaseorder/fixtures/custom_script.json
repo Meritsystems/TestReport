@@ -1,0 +1,11 @@
+[
+ {
+  "docstatus": 0, 
+  "doctype": "Custom Script", 
+  "dt": "Pre Purchase Order", 
+  "modified": "2017-10-06 03:50:13.213785", 
+  "name": "Pre Purchase Order-Client", 
+  "script": "frappe.ui.form.on(\"Pre Purchase Order\", \"make_purchaseorder\", function(frm, cdt, cdn) {\n\tconsole.log(\"## Purchase Items-Client Entered..\");\n\tvar arrList = []; \n\tvar commomSupplier = []; \n\tvar compareList = [];\n\tvar item_code;\n\tvar supplier;\n\tvar tax_template;\n\tvar excess_ordered;\n\tvar price;\n\tvar qty;\n\tvar d = frappe.get_doc(cdt, cdn);\n\tvar items_length = d.item.length;\n\tconsole.log(\"####-items-length::\", d.item.length)\n\tconsole.log(\"####-tax_template::\", frm.doc.tax_template)\n\tvar tax = frm.doc.tax_template\n\nvar index = 0;\nvar myMap = new Map();\nfor(var i=0; i < items_length; i++){\n\tvar arr = {};  \n   if(d.item[i].want_to_purchase!=0){\n\t if(d.item[i].qty!=0){\n\tarrList = []; \n\t item_code = d.item[i].item_code;\n\t console.log(\"### item_code \", item_code );\n\t supplier = d.item[i].supplier;\n\t tax_template = d.item[i].tax_template;\n\t excess_ordered = d.item[i].excess_ordered;\n\t price = d.item[i].price;\n\t qty = d.item[i].qty;\n\tconsole.log(excess_ordered);\n\n\tarr['item_code'] = item_code;\n\tarr['supplier'] = supplier;\n\tarr['tax_template'] = tax_template;\n\tarr['excess_ordered'] = excess_ordered;\n\tarr['price'] = price;\n\tarr['qty'] = qty;\n\n\t\tif(myMap.has(supplier)){\n\t\t\tarrList = myMap.get(supplier);\n\t\t\tarrList.push(arr);\n\t\t\tmyMap.set(supplier,arrList);\n\t\t}else{\n\t\t\tarrList.push(arr);\n\t\t\tmyMap.set(supplier,arrList);\n\t\t}\n}\n\t\n\t}\n}\n\nconsole.log(\"############myMap::::::::::::\", myMap);\n\nfor (const entry of myMap.entries()) {\n\tsup = entry[0]\n\tlist = myMap.get(sup);\n\t//console.log(\"###list\", list.length);\n\t//console.log(\"###list\", list[0]);\n\t//console.log(\"###list\", list[1]);\n  \t//console.log(entry[0]);\n\n\tfrappe.call({\nmethod: \t\t\t \"erpnext.buying.report.items_to_be_requested_from_stock_requistion.items_to_be_requested_from_stock_requistion.make_PurchaseOrder\",\nargs: {\n         \"args\": list,\n\t \"tax_template\": frm.doc.tax_template,\n        },\ncallback: function(r) \n                      { }\n});\n\t\n} \n      \n    });\n\n\n\n", 
+  "script_type": "Client"
+ }
+]

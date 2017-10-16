@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include customreportforpurchaseorder *.css
+recursive-include customreportforpurchaseorder *.csv
+recursive-include customreportforpurchaseorder *.html
+recursive-include customreportforpurchaseorder *.ico
+recursive-include customreportforpurchaseorder *.js
+recursive-include customreportforpurchaseorder *.json
+recursive-include customreportforpurchaseorder *.md
+recursive-include customreportforpurchaseorder *.png
+recursive-include customreportforpurchaseorder *.py
+recursive-include customreportforpurchaseorder *.svg
+recursive-include customreportforpurchaseorder *.txt
+recursive-exclude customreportforpurchaseorder *.pyc
