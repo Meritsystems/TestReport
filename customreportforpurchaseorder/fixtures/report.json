@@ -1,5 +1,4 @@
 {
-   
         "module": "Buying",
         "doctype": "Report",
         "disabled": 0,
@@ -38,5 +37,5 @@
         "name": "Items To Be Requested From Stock Requistion",
         "idx": 0,
         "report_name": "Items To Be Requested From Stock Requistion"
-   
+    
 }
