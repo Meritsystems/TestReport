@@ -4,26 +4,11 @@
         "disabled": 0,
         "roles": [
             {
-                "modified_by": "Administrator",
-                "parent": "Items To Be Requested From Stock Requistion",
-                "doctype": "Has Role",
-                "idx": 1,
-                "parenttype": "Report",
-                "role": "Stock User",
-                "owner": "Administrator",
-                "docstatus": 1,
-                "parentfield": "roles"
+                "role": "Stock User"
             },
             {
-                "modified_by": "Administrator",
-                "parent": "Items To Be Requested From Stock Requistion",
-                "doctype": "Has Role",
-                "idx": 2,
-                "parenttype": "Report",
-                "role": "Accounts Manager",
-                "owner": "Administrator",
-                "docstatus": 1,
-                "parentfield": "roles"
+                "role": "Accounts Manager"
+
             }
         ],
         "report_type": "Script Report",
@@ -37,5 +22,4 @@
         "name": "Items To Be Requested From Stock Requistion",
         "idx": 0,
         "report_name": "Items To Be Requested From Stock Requistion"
-    
 }
